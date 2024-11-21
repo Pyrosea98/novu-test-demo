@@ -18,13 +18,12 @@ export const welcomeOnboardingEmail = workflow(
       },
     );
 
-    await step.inApp("In-App Step", async () => {
-      return {
-        subject: payload.inAppSubject,
-        body: payload.inAppBody,
-        avatar: payload.inAppAvatar,
-      };
-    });
+      await step.push('push', async () => {
+          return {
+              subject: 'You received a message',
+              body: 'A new post has been created',
+          };
+      });
   },
   {
     payloadSchema,
