@@ -8,7 +8,7 @@ export const welcomeOnboardingEmail = workflow(
 
       await step.push('push', async () => {
           return {
-              subject: 'You received a message',
+              subject: 'You received a message from Novu',
               body: 'A new post has been created',
           };
       });
